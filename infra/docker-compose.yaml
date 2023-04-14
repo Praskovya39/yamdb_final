@@ -9,7 +9,7 @@ services:
       - ./.env
   web:
     restart: always  
-    image: prasko39/api_yamdb:latest
+    image: prasko39/yamdb_final:latest
     volumes:
       - static_value:/app/static/
       - media_value:/app/media/
