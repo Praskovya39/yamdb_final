@@ -1,0 +1,3 @@
+[submodule "api_yamdb"]
+	path = api_yamdb
+	url = https://github.com/Praskovya39/yamdb_final/api_yamdb
