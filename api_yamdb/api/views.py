@@ -8,7 +8,6 @@ from reviews.models import Title, Category, Genre, Review
 from api.serializers import (TitleSerializer, TitleReadSerializer,
                              CategorySerializer, GenreSerializer,
                              CommentSerializer, ReviewSerializer)
-
 from api.permissions import IsAuthorOrModer, IsAdminOrReadOnly
 from api.mixins import CustomViewSet
 from api.filter import CustomFilter
@@ -22,8 +21,7 @@ class TitleViewSet(viewsets.ModelViewSet):
     filterset_class = CustomFilter
 
     def get_queryset(self):
-        queryset = Title.objects.annotate(rating=Avg('reviews__score')).all()
-        return queryset
+        return Title.objects.annotate(rating=Avg('reviews__score')).all()
 
     def get_serializer_class(self):
         if self.action in ('list', 'retrieve'):
